@@ -13,6 +13,9 @@
             "src/Repository/.gitignore"
         ]
     },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "3.4.4"
+    },
     "doctrine/doctrine-migrations-bundle": {
         "version": "3.2",
         "recipe": {
@@ -26,13 +29,34 @@
             "migrations/.gitignore"
         ]
     },
-    "phpunit/phpunit": {
-        "version": "9.6",
+    "easycorp/easyadmin-bundle": {
+        "version": "4.6",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
-            "version": "9.3",
-            "ref": "a6249a6c4392e9169b87abf93225f7f9f59025e6"
+            "version": "3.0",
+            "ref": "b131e6cbfe1b898a508987851963fff485986285"
+        }
+    },
+    "knpuniversity/oauth2-client-bundle": {
+        "version": "2.15",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.20",
+            "ref": "1ff300d8c030f55c99219cc55050b97a695af3f6"
+        },
+        "files": [
+            "config/packages/knpu_oauth2_client.yaml"
+        ]
+    },
+    "phpunit/phpunit": {
+        "version": "10.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "9.6",
+            "ref": "7364a21d87e658eb363c5020c072ecfdc12e2326"
         },
         "files": [
             ".env.test",
@@ -218,6 +242,33 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/uid": {
+        "version": "6.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.2",
+            "ref": "d294ad4add3e15d7eb1bae0221588ca89b38e558"
+        },
+        "files": [
+            "config/packages/uid.yaml"
+        ]
+    },
+    "symfony/ux-live-component": {
+        "version": "2.9",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.6",
+            "ref": "73e69baf18f47740d6f58688c5464b10cdacae06"
+        },
+        "files": [
+            "config/routes/ux_live_component.yaml"
+        ]
+    },
+    "symfony/ux-twig-component": {
+        "version": "v2.9.1"
+    },
     "symfony/validator": {
         "version": "6.3",
         "recipe": {
@@ -255,7 +306,50 @@
             "config/packages/messenger.yaml"
         ]
     },
+    "symfony/webpack-encore-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.0",
+            "ref": "13ebe04e25085e2ff0bcb0f9218b561d8b5089f3"
+        },
+        "files": [
+            "assets/app.js",
+            "assets/styles/app.css",
+            "config/packages/webpack_encore.yaml",
+            "package.json",
+            "webpack.config.js"
+        ]
+    },
+    "symfonycasts/reset-password-bundle": {
+        "version": "1.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "97c1627c0384534997ae1047b93be517ca16de43"
+        },
+        "files": [
+            "config/packages/reset_password.yaml"
+        ]
+    },
+    "symfonycasts/verify-email-bundle": {
+        "version": "v1.13.0"
+    },
     "twig/extra-bundle": {
         "version": "v3.6.0"
+    },
+    "vich/uploader-bundle": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.13",
+            "ref": "1b3064c2f6b255c2bc2f56461aaeb76b11e07e36"
+        },
+        "files": [
+            "config/packages/vich_uploader.yaml"
+        ]
     }
 }

@@ -2,15 +2,50 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Elearning{% endblock %}</title>
+		<!-- Google Font -->
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
+            {{ encore_entry_link_tags('all') }}
+            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('bootstrap_icon') }}
+            {{ encore_entry_link_tags('slider') }}
+            {{ encore_entry_link_tags('glightbox') }}
+            {{ encore_entry_link_tags('style') }}
         {% endblock %}
+        <link id="style-switch" rel="stylesheet" type="text/css" href="{ encore_entry_css_files('style-dark') | first  }}"
+              dark="{{ encore_entry_css_files('style-dark') | first }}" light="{{ encore_entry_css_files('style') | first  }}">
 
-        {% block javascripts %}
-        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+<!-- Header START -->
+ {% include "includes/header.html.twig" %}
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+{% block body %}
+
+{% endblock %}	
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+<!-- =======================
+Footer START -->
+{% include "includes/footer.html.twig" %}
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('bootstrap.bundle') }}
+            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('glightboxjs') }}
+            {{ encore_entry_script_tags('purecounter_vanilla') }}
+            {{ encore_entry_script_tags('functions') }}
+        {% endblock %}
     </body>
 </html>
+

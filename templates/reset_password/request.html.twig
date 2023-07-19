@@ -1,0 +1,42 @@
+{% extends 'base_security.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block content %}
+    <div class="col-12 col-lg-6 d-flex justify-content-center">
+        <div class="row my-5">
+            <div class="col-sm-10 col-xl-12 m-auto">
+                {% for flash_error in app.flashes('reset_password_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                {% endfor %}
+                <!-- Title -->
+                <span class="mb-0 fs-1">🤔</span>
+                <h1 class="fs-2">Forgot Password?</h1>
+                <h5 class="fw-light mb-4">To receive a new password, enter your email address below.</h5>
+
+                <!-- Form START -->
+                <form name="reset_password_request_form" method="post">
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label for="exampleInputEmail1" class="form-label">Email address *</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-envelope-fill"></i></span>
+                            <input type="email" class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail" id="reset_password_request_form_email" name="reset_password_request_form[email]">
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="align-items-center">
+                        <div class="d-grid">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <button class="btn btn-primary mb-0" type="submit">Reset password</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Form END -->
+            </div>
+        </div> <!-- Row END -->
+    </div>
+
+
+
+{% endblock %}

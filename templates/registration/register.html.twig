@@ -1,0 +1,62 @@
+{% extends 'base_security.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-6 m-auto">
+    <div class="row my-5">
+        <div class="col-sm-10 col-xl-8 m-auto">
+            <span class="mb-0 fs-1">🗝️</span>
+            <h1 class="fs-2">Register</h1>
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+        </div>
+
+        {% if form_errors(registrationForm) %}
+            <div class="alert alert-danger m-3" role="alert">
+                {{ form_errors(registrationForm) }}
+            </div>
+        {% endif %}
+
+    <form name="registration_form" method="post">
+        <input type="hidden" name="registration_form[_token]" value="{{ csrf_token('register') }}">
+        <div class="mb-4">
+            <label for="exampleInputEmail1" class="form-label">Email address *</label>
+            <div class="input-group input-group-lg">
+                <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-envelope-fill"></i></span>
+                <input type="email" class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail" id="exampleInputEmail1" name="registration_form[email]" required="required" maxlength="255">
+            </div>
+            {% if form_errors(registrationForm.email) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(registrationForm.email) }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            <label for="inputPassword5" class="form-label">Password *</label>
+            <div class="input-group input-group-lg">
+                <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="*********" id="inputPassword5" name="registration_form[plainPassword]" required="require">
+            </div>
+            {% if form_errors(registrationForm.plainPassword) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(registrationForm.plainPassword) }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="checkbox-1" name="registration_form[agreeTerms]">
+                <label class="form-check-label" for="checkbox-1">By signing up, you agree to the<a href="#"> terms of service</a></label>
+            </div>
+        </div>
+        <div class="align-items-center mt-0">
+            <div class="d-grid">
+                <button class="btn btn-primary mb-0" type="submit">Register</button>
+            </div>
+        </div>
+ </form>
+    </div>
+</div>
+{% endblock %}

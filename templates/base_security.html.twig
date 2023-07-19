@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from eduport.webestica.com/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Dec 2021 19:54:16 GMT -->
+<head>
+    <title>{% block title %} {% endblock %}</title>
+
+    <!-- Google Font -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('all') }}
+        {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('bootstrap_icon') }}
+        {{ encore_entry_link_tags('slider') }}
+        {{ encore_entry_link_tags('glightbox') }}
+        {{ encore_entry_link_tags('style') }}
+    {% endblock %}
+
+</head>
+
+<body>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+    <section class="p-0 d-flex align-items-center position-relative overflow-hidden">
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left -->
+                {% include "includes/securityLeft.html.twig" %}
+                <!-- Right -->
+                {% block content %}
+
+                {% endblock %}
+
+            </div> <!-- Row END -->
+        </div>
+    </section>
+</main>
+
+<script src="{{ asset('build/bootstrap.bundle.js') }}" defer ></script>
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('glightboxjs') }}
+    {{ encore_entry_script_tags('purecounter_vanilla') }}
+    {{ encore_entry_script_tags('functions') }}
+{% endblock %}
+
+</body>
+
+<!-- Mirrored from eduport.webestica.com/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Dec 2021 19:54:16 GMT -->
+</html>

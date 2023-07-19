@@ -1,0 +1,15 @@
+{% macro recursiveCategory(categ) %}
+    <li class="dropdown-submenu dropend">
+        <a class="dropdown-item {{ (categ.children | length) ? "dropdown-toggle":"" }}" href="#">
+            {{ categ.name }}
+        </a>
+        {% if(categ.children and categ.children|length > 0) %}
+            <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+            {% for subCateg in categ.children %}
+                {% import _self as twigdebug %}
+                {{ twigdebug.recursiveCategory(subCateg) }}
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endmacro %}
