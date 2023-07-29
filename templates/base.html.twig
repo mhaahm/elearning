@@ -14,8 +14,9 @@
             {{ encore_entry_link_tags('glightbox') }}
             {{ encore_entry_link_tags('style') }}
         {% endblock %}
-        <link id="style-switch" rel="stylesheet" type="text/css" href="{ encore_entry_css_files('style-dark') | first  }}"
-              dark="{{ encore_entry_css_files('style-dark') | first }}" light="{{ encore_entry_css_files('style') | first  }}">
+
+        <link id="style-switch" rel="stylesheet" type="text/css" href="{{ getWebPackPathFile('build/style-dark.css') }}"
+              dark="{{ getWebPackPathFile('build/style-dark.css') }}" light="{{ getWebPackPathFile('build/style.css')  }}">
 
     </head>
     <body>

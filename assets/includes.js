@@ -27,11 +27,17 @@ const Assets = [
         "name" : "purecounter_vanilla",
         "path" : "./assets/vendor/purecounterjs/dist/purecounter_vanilla.js"
     }, {
+        "name" : "choices",
+        "path" : "./assets/vendor/choices/js/choices.min.js"
+    }, {
         "name" : "functions",
         "path" : "./assets/js/functions.js"
     }, {
         "name" : "style-dark",
         "path" : "./assets/css/style-dark.css"
+    }, {
+        "name" : "choices_css",
+        "path" : "./assets/vendor/choices/css/choices.min.css"
     }
 ];
 module.exports = Assets;

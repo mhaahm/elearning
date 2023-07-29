@@ -23,6 +23,7 @@ class AppExtension extends AbstractExtension
     {
         return [
             new TwigFunction('returnTwigContent', [AppExtensionRuntime::class, 'returnTwigContent']),
+            new TwigFunction('getWebPackPathFile', [AppExtensionRuntime::class, 'getWebPackPathFile']),
         ];
     }
 }

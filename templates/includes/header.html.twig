@@ -36,20 +36,20 @@
 					<ul class="navbar-nav navbar-nav-scroll me-auto">
 					<!-- Nav item 1 Demos -->
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="#" id="demoMenu" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link" href="{{ path('app_home') }}" id="demoMenu" aria-haspopup="true" aria-expanded="false">
 							<i class="bi bi-house-fill"></i> Home
 						</a>
 					</li>
 
 					<!-- Nav item 2 Pages -->
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link" href="{{ path('course_home') }}" id="pagesMenu"  aria-expanded="false">
 							<i class="bi bi-bookmark-fill"></i>Courses</a>
 					</li>
 
 					<!-- Nav item 3 Account -->
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link" href="{{ path('app_instructor') }}" id="accounntMenu">
 							<i class="bi bi-person-badge-fill"></i> Instructors
 						</a>
 					</li>
@@ -90,8 +90,8 @@
 								<img class="avatar-img rounded-circle shadow" src="{{ asset("build/images/avatar/01.jpg")}}" alt="avatar">
 							</div>
 							<div>
-								<a class="h6" href="#">Lori Ferguson</a>
-								<p class="small m-0">example@gmail.com</p>
+								<a class="h6" href="#">{{ (app.user.firstName | default('')) }}</a>
+								<p class="small m-0">{{ (app.user.email | default('')) }}</p>
 							</div>
 						</div>
 						<hr>
